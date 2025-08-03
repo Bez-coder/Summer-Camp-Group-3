@@ -91,12 +91,12 @@ brokerhub/
 ├── client/              
 │   ├── src/
 │   ├── public/
-├── server/               
+├── server/ 
 │   ├── controllers/
 │   ├── routes/
 │   ├── models/
 │   ├── middlewares/
-├── docker/               
+├── docker/
 ├── .env
 ├── package.json
 └── README.md
