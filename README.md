@@ -90,8 +90,8 @@ Many individuals and small-scale brokers face challenges due to the lack of a un
 brokerhub/                                                            
 ├── client/                                         
 │    ├── src/
-│    ├── public/
-├── server/     
+│    ├── public/                                                                                         
+├──server/     
 │    ├── controllers/   
 │    ├── routes/  
 │    ├── models/  
