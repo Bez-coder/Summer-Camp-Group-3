@@ -87,15 +87,15 @@ Many individuals and small-scale brokers face challenges due to the lack of a un
 - Functional and API tests using **Supertest**
 - Security and logic tests using **Jest**
 
-brokerhub/
-├── client/   
-│   ├── src/
-│   ├── public/
+brokerhub/                                                            
+├── client/                                         
+│    ├── src/
+│    ├── public/
 ├── server/     
-│   ├── controllers/   
-│   ├── routes/  
-│   ├── models/  
-│   ├── middlewares/                                                                                     
+│    ├── controllers/   
+│    ├── routes/  
+│    ├── models/  
+│    ├── middlewares/                                                                                     
 ├── docker/                                    
 ├── .env                                                    
 ├── package.json                                               
