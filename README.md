@@ -88,9 +88,12 @@ Many individuals and small-scale brokers face challenges due to the lack of a un
 - Security and logic tests using **Jest**
 
 brokerhub/
-├── client/              
+├── client/   
+
 │   ├── src/
+
 │   ├── public/
+
 ├── server/ 
 │   ├── controllers/
 │   ├── routes/
