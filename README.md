@@ -91,14 +91,14 @@ brokerhub/
 ├── client/   
 │   ├── src/
 │   ├── public/
-├── server/   
-│   ├── controllers/ 
-│   ├── routes/
-│   ├── models/
-│   ├── middlewares/
-├── docker/
-├── .env
-├── package.json
+├── server/     
+│   ├── controllers/   
+│   ├── routes/  
+│   ├── models/  
+│   ├── middlewares/                                                                                     
+├── docker/                                    
+├── .env                                                    
+├── package.json                                               
 └── README.md
 
 # Project setup 
