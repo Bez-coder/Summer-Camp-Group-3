@@ -88,15 +88,15 @@ Many individuals and small-scale brokers face challenges due to the lack of a un
 - Security and logic tests using **Jest**
 
 brokerhub/
-├── client/               # React frontend (Vite)
+├── client/              
 │   ├── src/
 │   ├── public/
-├── server/               # Express backend
+├── server/               
 │   ├── controllers/
 │   ├── routes/
 │   ├── models/
 │   ├── middlewares/
-├── docker/               # Docker configurations
+├── docker/               
 ├── .env
 ├── package.json
 └── README.md
