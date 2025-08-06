@@ -1,7 +1,4 @@
 {
-  "name": "broker-backend",
-  "version": "1.0.0",
-  "main": "src/index.js",
   "dependencies": {
     "@prisma/client": "^6.13.0",
     "cors": "^2.8.5",

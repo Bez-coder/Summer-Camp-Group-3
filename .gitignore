@@ -1,0 +1,16 @@
+# Global ignores
+.env
+node_modules/
+
+# Backend specific
+broker-website/backend/.env
+broker-website/backend/node_modules/
+
+# Frontend specific
+broker-website/frontend/broker-frontend/.env
+broker-website/frontend/broker-frontend/node_modules/
+
+# OS/Editor files
+.DS_Store
+Thumbs.db
+.vscode/
