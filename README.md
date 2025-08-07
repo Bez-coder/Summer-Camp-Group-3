@@ -393,11 +393,11 @@ If you encounter any issues:
 
 After setting up the basic platform, consider:
 
-2. **Email Service**: Add email notifications
-3. **File Upload**: Implement image upload for listings
-4. **Real-time Chat**: Add messaging between users
-5. **Advanced Search**: Implement Elasticsearch
-6. **Mobile App**: Create React Native mobile app
-7. **Analytics**: Add user behavior tracking
-8. **Multi-language**: Internationalization support
+1. **Email Service**: Add email notifications
+2. **File Upload**: Implement image upload for listings
+3. **Real-time Chat**: Add messaging between users
+4. **Advanced Search**: Implement Elasticsearch
+5. **Mobile App**: Create React Native mobile app
+6. **Analytics**: Add user behavior tracking
+7. **Multi-language**: Internationalization support
 
