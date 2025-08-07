@@ -1,7 +1,7 @@
 # Summer-Camp-Group-3
 # BrokerHub – Comprehensive Broker Website Platform
 
-**BrokerHub** is a secure, scalable, and user-friendly full-stack web application tailored for modern commission-based brokerage across multiple categories such as real estate, vehicles, electronics, and services.
+**BrokerHub** is a secure, scalable, and user-friendly full-stack web application tailored for modern commission-based brokerage across multiple categories such as real estate, vehicles, electronics, services and local goods like coffee, teff...
 
 
 ## Problem Statement
