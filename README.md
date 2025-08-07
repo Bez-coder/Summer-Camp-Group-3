@@ -7,7 +7,7 @@ BrokerHub is a full-stack platform designed specifically for local goods and ser
 ## 🚀 Features
 
 ### Local Commerce & Goods Focus
-- **Local Goods Marketplace**: Buy and sell real estate, vehicles, electronics, and services within your community.
+- **Local Goods Marketplace**: Buy and sell real estate, vehicles, and services within your community.
 - **Location-Based Listings**: Search and filter by city, region, or neighborhood for hyperlocal results.
 - **Category-Specific Verification**: Enhanced checks for local products (e.g., coffee quality, property ownership, vehicle papers).
 - **Community Trust**: User ratings, reviews, and dispute resolution tailored for local transactions.
