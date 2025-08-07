@@ -393,7 +393,6 @@ If you encounter any issues:
 
 After setting up the basic platform, consider:
 
-1. **Payment Integration**: Integrate with Stripe or PayPal
 2. **Email Service**: Add email notifications
 3. **File Upload**: Implement image upload for listings
 4. **Real-time Chat**: Add messaging between users
