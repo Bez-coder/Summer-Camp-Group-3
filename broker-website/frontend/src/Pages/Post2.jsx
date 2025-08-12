@@ -13,9 +13,9 @@ function Post2() {
   return (
     <>
     <Seller_nav/>
-    <div className="max-w-4xl mx-auto p-6 bg-white shadow rounded-lg space-y-6">
+    <div className="max-w-2xl mx-auto p-8 bg-gray-100 shadow rounded-lg space-y-8">
       <div>
-        <label className="block font-medium mb-1">Title*</label>
+        <label className="block  mb-1 font-bold">Title*</label>
         <input
           type="text"
           className="w-full border p-2 rounded"
@@ -56,7 +56,7 @@ function Post2() {
           checked={post.madeInEthiopia}
           onChange={(e) => setPost({ ...post, madeInEthiopia: e.target.checked })}
         />
-        <label>Made in Ethiopia</label>
+        <label className="font-bold">Made in Ethiopia</label>
       </div>
 
       <textarea
@@ -132,7 +132,7 @@ function Post2() {
 
       {/* Submit Button */}
       <button
-        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+        className="w-full bg-black text-white py-2 rounded hover:bg-gray-700"
         onClick={handleSubmit}
       >
         Submit Ad

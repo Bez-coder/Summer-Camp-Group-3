@@ -69,7 +69,7 @@ useEffect(() => {
                 </span>
               </div> 
               <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-gray-300">
-                <button onClick={'/seller_dashboard'}><img
+                <button onClick={() => navigate('/seller_dashboard')}><img
                   src={user?.profileImageUrl ||'https://i.pravatar.cc/40'} 
                   alt="User Profile"
                   className="w-full h-full object-cover"
@@ -82,7 +82,7 @@ useEffect(() => {
                    bg-gray-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
                   Messages
                 </span>
-              <button className="bg-black hover:bg-gray-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
+              <button onClick={() => navigate('/post_1')} className="bg-black hover:bg-gray-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
                 SELL
               </button>
             </div>

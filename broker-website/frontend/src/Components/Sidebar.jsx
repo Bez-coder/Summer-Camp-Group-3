@@ -9,8 +9,8 @@ const categories = [
     subcategories: ['Appliances', 'Furniture', 'Decor', 'Kitchen Tools']
   },
   {
-    id: 'car-electronics',
-    name: 'Car Electronics',
+    id: 'car',
+    name: 'Car ',
     icon: 'Car',
     subcategories: ['Audio Systems', 'GPS Navigation', 'Dash Cams', 'Accessories']
   },

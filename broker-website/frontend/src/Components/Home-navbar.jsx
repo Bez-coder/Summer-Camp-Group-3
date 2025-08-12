@@ -39,10 +39,10 @@ const Home_navbar = ({ searchTerm, onSearchChange, onOpenSidebar}) => {
 
           {/* Right Actions */}
           <div className="flex items-center space-x-4">
-            <button className="bg-black hover:bg-gray-800 text-white px-5 py-2 rounded-lg font-medium transition-colors">
+            <button onClick={() => navigate('/post_1')} className="bg-black hover:bg-gray-800 text-white px-5 py-2 rounded-lg font-medium transition-colors">
                 SELL
               </button>
-            <button onClick={() => navigate('/seller_dashboard')} className="p-2 hover:bg-gray-100 rounded-lg">
+            <button className="p-2 hover:bg-gray-100 rounded-lg">
               <User className="h-6 w-6" />
             </button>
           </div>

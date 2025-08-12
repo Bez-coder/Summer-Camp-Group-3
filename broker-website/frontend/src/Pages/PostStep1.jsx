@@ -17,7 +17,7 @@ function PostStep1() {
   return (
     <>
     <Seller_nav/>
-    <div className="max-w-3xl mx-auto p-6 bg-white shadow rounded-lg space-y-6">
+    <div className="max-w-2xl mx-auto p-6 bg-gray-100 shadow rounded-lg space-y-8">
       <div>
         <label className="block font-medium mb-1">Category*</label>
         <select
@@ -26,9 +26,10 @@ function PostStep1() {
           onChange={(e) => setPost({ ...post, category: e.target.value })}
         >
           <option value="">Select Category</option>
-          <option value="baby_kids">Baby & Kids' Accessories</option>
-          <option value="electronics">Electronics</option>
-          <option value="fashion">Fashion</option>
+          <option value="baby_kids">Home & Kitchen</option>
+          <option value="electronics"> Car </option>
+          <option value="fashion">Mobile & Tech</option>
+          <option value="fashion">Services</option>
         </select>
       </div>
 
