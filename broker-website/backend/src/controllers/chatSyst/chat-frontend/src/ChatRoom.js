@@ -2,78 +2,83 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './ChatRoom.css';  // We'll create this CSS file for styles
 
 const ChatRoom = () => {
-	const [messages, setMessages] = useState([]);
-	const [user, setUser] = useState('');
-	const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState([]);
+  const [user, setUser] = useState('');
+  const [message, setMessage] = useState('');
 
-	const fetchMessages = async () => {
-		try {
-			const response = await axios.get('http://localhost:5000/messages');
-			setMessages(response.data);
-		} catch (error) {
-			console.error('Error fetching messages:', error);
-		}
-	};
+  const fetchMessages = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/messages');
+      setMessages(response.data);
+    } catch (error) {
+      console.error('Error fetching messages:', error);
+    }
+  };
 
-	const sendMessage = async () => {
-		try {
-			await fetch('http://localhost:5000/messages', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({ user, message }),
-			});
+  const sendMessage = async () => {
+    if (!user.trim() || !message.trim()) {
+      alert('Please enter both your name and a message');
+      return;
+    }
 
-			// Clear the message input after sending
-			setMessage('');
-			// Fetch messages to update the list
-			fetchMessages();
-		} catch (error) {
-			console.error('Error sending message:', error);
-		}
-	};
+    try {
+      await axios.post('http://localhost:5000/messages', {
+        user: user.trim(),
+        message: message.trim(),
+      });
 
-	useEffect(() => {
-		// Fetch messages on component mount
-		fetchMessages();
-		// Poll for new messages every 2 seconds
-		const interval = setInterval(() => {
-			fetchMessages();
-		}, 2000);
+      setMessage('');
+      fetchMessages();
+    } catch (error) {
+      console.error('Error sending message:', error);
+    }
+  };
 
-		return () => clearInterval(interval);
-	}, []); // Run only once on mount
+  useEffect(() => {
+    fetchMessages();
 
-	return (
-		<div>
-			<h2>Chat Room</h2>
-			<ul>
-				{messages.map((message) => (
-					<li key={message._id}>
-						<strong>{message.user}:</strong> {message.message}
-					</li>
-				))}
-			</ul>
-			<div>
-				<input
-					type="text"
-					placeholder="Your name"
-					value={user}
-					onChange={(e) => setUser(e.target.value)}
-				/>
-				<input
-					type="text"
-					placeholder="Type your message..."
-					value={message}
-					onChange={(e) => setMessage(e.target.value)}
-				/>
-				<button onClick={sendMessage}>Send</button>
-			</div>
-		</div>
-	);
+    // Poll every 2 seconds for new messages
+    const interval = setInterval(fetchMessages, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="chat-container">
+      <h2>Chat Room</h2>
+      <ul className="chat-messages">
+        {messages.map((msg) => (
+          <li key={msg._id} className={`chat-message ${msg.user === user ? 'own' : ''}`}>
+            <div className="message-header">
+              <strong>{msg.user}</strong>
+              <span>{new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+            </div>
+            <p>{msg.message}</p>
+          </li>
+        ))}
+      </ul>
+      <div className="chat-input">
+        <input
+          type="text"
+          placeholder="Your name"
+          value={user}
+          onChange={(e) => setUser(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Type your message..."
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') sendMessage();
+          }}
+        />
+        <button onClick={sendMessage}>Send</button>
+      </div>
+    </div>
+  );
 };
 
 export default ChatRoom;

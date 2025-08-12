@@ -1,5 +1,3 @@
-//App.js
-
 import './App.css';
 import ChatRoom from './ChatRoom';
 
