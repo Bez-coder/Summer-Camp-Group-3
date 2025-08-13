@@ -1,7 +1,7 @@
 .chat-container {
   max-width: 80vw;
   margin: 20px auto;
-  background: #f0f4ff;
+  background:white;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -22,14 +22,15 @@
   margin-bottom: 10px;
   padding: 10px 15px;
   border-radius: 15px;
-  background-color: #d0e1ff;
+  background-color: #000000;
   max-width: 50%;
   word-wrap: break-word;
   text-align: center;
+  color:white;
 }
 
 .chat-message.own {
-  background-color: #8ab6f9;
+  background-color: #7D7D7D;
   margin-left: auto;
   color: white;
   text-align: center;
