@@ -6,7 +6,6 @@ interface ButtonInterface {
 
   text:string
   type?:ButtonType
-  href:string
   children?:React.ReactNode
   handleClick?:()=> void
  
@@ -23,15 +22,14 @@ const Button = (props:ButtonInterface) => {
       ? `${baseClass} ${submitColorClass}`
       : `${baseClass} ${defaultColorClass}`;
   return (
-    <a
+    <button
     className={`${finalClass}`}
-    href={props.href}
     type={props.type}
     onClick={props.handleClick}
     >
       {props.children}
       {props.text}
-    </a>
+    </button>
   )
 }
 
