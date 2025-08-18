@@ -34,9 +34,11 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     setIsSuccess(result.data.success);
 
     if (result.data.success) {
-      // optionally store token
+      
       localStorage.setItem("token", result.data.token);
-      setTimeout(() => navigate("/seller_dashboard"), 2000);
+      setTimeout(() =>{ 
+       navigate("/seller_dashboard")
+      }, 2000);
     }
   } catch (err: unknown) {
   if (axios.isAxiosError(err)) {
@@ -64,7 +66,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         </p>
         <div className='flex mt-5'>
             <p className='mr-5'>Don't have an account?</p>
-            <a href='/register'>Register</a>
+            <a href='/register_buyer'>Register</a>
         </div>
     </div>
     </form>

@@ -1,9 +1,8 @@
-import React from 'react'
-import Registerform from '../Components/Registerform'
-import Button from '../Components/Button'
-import { useState } from 'react'
-import {  useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import React, { useState } from 'react'
+import Registerform from '../Components/Registerform';
+import Button from '../Components/Button';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 interface SignupInterface {
   name: string;
@@ -12,8 +11,9 @@ interface SignupInterface {
   phone: string;
 }
 
-const Registerpage = () => {
-  const navigate= useNavigate()
+
+const Seller_registerPage = () => {
+    const navigate= useNavigate()
   const [Data, SetData] = useState<SignupInterface>({
     name: '',
     email: '',
@@ -34,7 +34,7 @@ const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
   try {
-    const result = await axios.post("http://localhost:5001/api/auth/register", Data, {
+    const result = await axios.post("http://localhost:5001/api/auth/register/seller", Data, {
       headers: { "Content-Type": "application/json" }
     });
 
@@ -80,4 +80,4 @@ const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
   )
 }
 
-export default Registerpage
+export default Seller_registerPage

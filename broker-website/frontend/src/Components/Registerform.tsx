@@ -16,8 +16,9 @@ const Registerform = ({formData,onChange}:SignupInterface) => {
     <div className="w-5/6  m-auto  py-0">
       <div className="flex w-full mb-10 overflow-hidden rounded-lg border border-gray-300 text-sm font-medium">
       <Link
-        className={`flex-1 py-3 text-center transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50  hover:bg-gray-400`}
-        to="/register"
+        className={`flex-1 py-3 text-center transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50  hover:bg-gray-400 `}
+        to="/register_buyer"
+        
       >
         Buyer
       </Link>

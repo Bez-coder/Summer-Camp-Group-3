@@ -54,10 +54,6 @@ export class AuthService {
     }
     const token = JwtGenerator(user.id);
 
-    console.log("User found:", user);
-console.log("Input password:", password);
-console.log("Stored password:", user?.password);
-
 return {user,token };
   }
   static async getUserById(id) {

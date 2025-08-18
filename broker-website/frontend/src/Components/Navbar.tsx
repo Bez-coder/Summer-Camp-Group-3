@@ -22,7 +22,7 @@ const Navbar = () => {
           className="flex items-center p-1 text-sm gap-x-2 text-slate-600 hover:bg-blue-200">
  
  
-          <a href="/Register" className="flex items-center">
+          <a href="/register_buyer" className="flex items-center">
            Register
           </a>
         </li>
@@ -30,7 +30,7 @@ const Navbar = () => {
           className="flex items-center p-1 text-sm gap-x-2 text-slate-600 hover:bg-blue-200">
  
  
-          <a href="/Signin" className="flex items-center">
+          <a href="/signin" className="flex items-center">
             Sign In
           </a>
         </li>
