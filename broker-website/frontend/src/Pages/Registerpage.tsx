@@ -88,8 +88,8 @@ const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
 
   return (
     <>
-    <form className='mt-20 py-0 border' onSubmit={handleSubmit}>
-      <div className="border max-w-lg mx-auto bg-white rounded-lg shadow-md px-8 py-0 flex flex-col items-center">
+    <form className='mt-20 py-0 ' onSubmit={handleSubmit}>
+      <div className=" max-w-lg mx-auto bg-white rounded-lg shadow-md px-8 py-0 flex flex-col items-center">
         
         <Registerform formData={Data} onChange={handleChange} />
         
