@@ -104,12 +104,12 @@ function Home() {
               through our secure commission-based platform.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/register">
+              <Link to="/signin">
                 <button className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-3 rounded-lg font-semibold transition-colors">
                   Get Started
                 </button>
               </Link>
-              <Link to="/login">
+              <Link to="/signin">
                 <button className="bg-white border border-blue-600 text-blue-600 hover:bg-blue-50 text-lg px-8 py-3 rounded-lg font-semibold transition-colors">
                   Login
                 </button>
