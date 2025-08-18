@@ -31,18 +31,31 @@ enum UserRole {
 }
 
 model Listing {
-  id            Int        @id @default(autoincrement())
-  title         String
-  description   String
-  category      Category
-  price         Float
-  status        ListingStatus @default(ACTIVE)
-  commission    Float
-  owner         User      @relation(fields: [ownerId], references: [id])
-  ownerId       Int
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  transactions  Transaction[]
+  id              Int            @id @default(autoincrement())
+  title           String
+  description     String
+  price           Float
+  category        Category
+  location        String?
+  photoUrl        String?
+  type            String?
+  condition       String?
+  color           String?
+  madeInEthiopia  Boolean        @default(false)
+  bulkPrice       Float?
+  negotiable      Boolean        @default(false)
+  phone           String?
+  name            String?
+  delivery        Boolean        @default(false)
+  promotion       Boolean        @default(false)
+  video           String?
+  status          ListingStatus  @default(ACTIVE)
+  commission      Float
+  owner           User           @relation(fields: [ownerId], references: [id])
+  ownerId         Int
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  transactions    Transaction[]
 }
 
 enum Category {
@@ -80,4 +93,15 @@ enum TransactionStatus {
   COMPLETED
   CANCELLED
   DISPUTED
+}
+model Ad {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  price       Float
+  category    String
+  imageUrl    String?
+  sellerName  String
+  contactInfo String
+  createdAt   DateTime @default(now())
 }

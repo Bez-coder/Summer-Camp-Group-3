@@ -30,8 +30,21 @@ CREATE TABLE "public"."Listing" (
     "id" SERIAL NOT NULL,
     "title" TEXT NOT NULL,
     "description" TEXT NOT NULL,
-    "category" "public"."Category" NOT NULL,
     "price" DOUBLE PRECISION NOT NULL,
+    "category" "public"."Category" NOT NULL,
+    "location" TEXT,
+    "photoUrl" TEXT,
+    "type" TEXT,
+    "condition" TEXT,
+    "color" TEXT,
+    "madeInEthiopia" BOOLEAN NOT NULL DEFAULT false,
+    "bulkPrice" DOUBLE PRECISION,
+    "negotiable" BOOLEAN NOT NULL DEFAULT false,
+    "phone" TEXT,
+    "name" TEXT,
+    "delivery" BOOLEAN NOT NULL DEFAULT false,
+    "promotion" BOOLEAN NOT NULL DEFAULT false,
+    "video" TEXT,
     "status" "public"."ListingStatus" NOT NULL DEFAULT 'ACTIVE',
     "commission" DOUBLE PRECISION NOT NULL,
     "ownerId" INTEGER NOT NULL,
@@ -53,6 +66,21 @@ CREATE TABLE "public"."Transaction" (
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "Transaction_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "public"."Ad" (
+    "id" SERIAL NOT NULL,
+    "title" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+    "price" DOUBLE PRECISION NOT NULL,
+    "category" TEXT NOT NULL,
+    "imageUrl" TEXT,
+    "sellerName" TEXT NOT NULL,
+    "contactInfo" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "Ad_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
