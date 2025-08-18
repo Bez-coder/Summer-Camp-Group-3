@@ -13,8 +13,8 @@ export class AuthController {
         message: 'User registered successfully',
         ...result,
       });
-    } catch (error) {
-      next(error);
+    } catch (error: any) {
+      res.status(400).json({ message: error.message || 'Registration failed' });
     }
   }
 
@@ -25,8 +25,8 @@ export class AuthController {
         message: 'Login successful',
         ...result,
       });
-    } catch (error) {
-      next(error);
+    } catch (error: any) {
+      res.status(400).json({ message: error.message || 'Login failed' });
     }
   }
 
@@ -34,8 +34,8 @@ export class AuthController {
     try {
       const user = await AuthService.getUserById(req.user.id);
       res.json({ user });
-    } catch (error) {
-      next(error);
+    } catch (error: any) {
+      res.status(404).json({ message: error.message || 'User not found' });
     }
   }
 }
