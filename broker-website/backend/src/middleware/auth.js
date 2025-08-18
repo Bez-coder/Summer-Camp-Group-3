@@ -1,5 +1,5 @@
 const Authenticate=(req,res, next)=>{
-    const {firstName, lastName, email, password, fan}=req.body;
+    const {name, email, password,phone}=req.body;
 
     function validEmail(userEmail){
         return /^\w+([\.~]?\w+)*@\w+([\.~]?\w+)*(\.\w{2,3})+$/.test(userEmail);
@@ -7,7 +7,7 @@ const Authenticate=(req,res, next)=>{
 
     if(req.path==="/register"){
 
-        if(![firstName,lastName,email, password, fan].every(Boolean)){
+        if(![name,email, password,phone].every(Boolean)){
             return res.status(400).json("missing credentials");
         }else if(!validEmail(email)){
             return res.status(400).json("Invalid Email");

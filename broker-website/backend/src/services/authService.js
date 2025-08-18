@@ -19,7 +19,10 @@ export class AuthService {
         const hashedPassword = await bcrypt.hash(password, salt);
 
         const userData={
-          name,email,password:hashedPassword,phone
+          name,
+          email,
+          password:hashedPassword,
+          phone
         }
         if(role){
           userData.role=role

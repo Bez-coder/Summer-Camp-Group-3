@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 interface SignupInterface{
   formData:{
@@ -8,10 +9,39 @@ interface SignupInterface{
   phone:string}
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
+const [activeLink, setActiveLink] = useState('/register');
+
+  const handleLinkClick = (path) => {
+    setActiveLink(path);
+  };
+
+  const activeLinkStyle = 'bg-gray-200 text-gray-900';
+  const inactiveLinkStyle = 'text-gray-500 hover:bg-gray-100';
+
 const Registerform = ({formData,onChange}:SignupInterface) => {
   return (
     <>
-    <div className="m-1 mt-10">
+    <div className="w-5/6  m-auto  py-0">
+      <div className="flex w-full mb-10 overflow-hidden rounded-lg border border-gray-300 text-sm font-medium">
+      <Link
+        className={`flex-1 py-3 text-center transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ${
+          activeLink === '/register' ? activeLinkStyle : inactiveLinkStyle
+        }`}
+        to="/register"
+        onClick={() => handleLinkClick('/register')}
+      >
+        Buyer
+      </Link>
+      <Link
+        className={`flex-1 py-3 text-center transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ${
+          activeLink === '/register_seller' ? activeLinkStyle : inactiveLinkStyle
+        }`}
+        to="/register_seller"
+        onClick={() => handleLinkClick('/register_seller')}
+      >
+        Seller
+      </Link>
+    </div>
       <div>
         <h1 className="text-xl font-bold text-center text-gray-800 mb-8">
           Welcome to Brokerhub

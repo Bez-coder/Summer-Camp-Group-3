@@ -2,7 +2,7 @@ import React from 'react'
 import Registerform from '../Components/Registerform'
 import Button from '../Components/Button'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 interface SignupInterface {
@@ -31,7 +31,7 @@ const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
     
   };
 
-  const handleSubmit =async (e: React.FormEvent<HTMLFormElement>) => {
+  /*const handleSubmit =async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData();
   formData.append("name", Data.name);
@@ -41,7 +41,7 @@ const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
 
   try {
     const result = await axios.post(
-      "http://localhost:5001/api/auth/register",
+      "http://localhost:5001/api/auth/register/seller",
       formData,
       {
         headers: { "Content-Type": "multipart/form-data" }
@@ -59,12 +59,37 @@ const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
     console.error(error);
   }
 
-  };
+  };*/
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  try {
+    const result = await axios.post("http://localhost:5001/api/auth/register/seller", Data, {
+      headers: { "Content-Type": "application/json" }
+    });
+
+    setStatusMessage(result.data.message);
+    setIsSuccess(result.data.success);
+
+    if (result.data.success) {
+
+      localStorage.setItem("token", result.data.token);
+      setTimeout(() => navigate("/signin"), 2000);
+    }
+  } catch (err: unknown) {
+  if (axios.isAxiosError(err)) {
+    setStatusMessage(err.response?.data?.message || "Registration Failed");
+  } else {
+    setStatusMessage("Registration Failed");
+  }
+  setIsSuccess(false);
+}
+};
+
 
   return (
     <>
-    <form onSubmit={handleSubmit}>
-      <div className="max-w-lg mx-auto bg-white rounded-lg shadow-md px-8 py-10 flex flex-col items-center">
+    <form className='mt-20 py-0 border' onSubmit={handleSubmit}>
+      <div className="border max-w-lg mx-auto bg-white rounded-lg shadow-md px-8 py-0 flex flex-col items-center">
         
         <Registerform formData={Data} onChange={handleChange} />
         
