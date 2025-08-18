@@ -8,7 +8,7 @@ const { Server } = require("socket.io");
 const ChatMessage = require("./models/ChatMessage");
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
 app.use(cors({ origin: ["http://localhost:3000", "http://127.0.0.1:3000"], credentials: true }));
 app.use(express.json());
@@ -93,6 +93,13 @@ io.on("connection", (socket) => {
     if (joinedRoom) socket.to(joinedRoom).emit("system:info", { text: `${username} left`, timestamp: Date.now() });
   });
 });
+
+async function Del(){
+	await mongoose.connect("mongodb://127.0.0.1:27017/userDB");
+	await ChatMessage.deleteMany({});
+	mongoose.disconnect();
+}
+
 
 server.listen(PORT, () => {
   console.log(`Server (HTTP + Socket.IO) running at http://localhost:${PORT}`);
