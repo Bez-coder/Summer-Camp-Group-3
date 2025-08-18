@@ -34,7 +34,7 @@ const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
   try {
-    const result = await axios.post("http://localhost:5001/api/auth/register/seller", Data, {
+  const result = await axios.post("http://localhost:3001/api/auth/register/seller", Data, {
       headers: { "Content-Type": "application/json" }
     });
 

@@ -26,7 +26,7 @@ const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
 const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
   try {
-    const result = await axios.post("http://localhost:5001/api/auth/signin", Data, {
+  const result = await axios.post("http://localhost:3001/api/auth/signin", Data, {
       headers: { "Content-Type": "application/json" }
     });
 
@@ -36,9 +36,9 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     if (result.data.success) {
       
       localStorage.setItem("token", result.data.token);
-      setTimeout(() =>{ 
-       navigate("/seller_dashboard")
-      }, 2000);
+  setTimeout(() =>{ 
+   navigate("/dashboard")
+  }, 2000);
     }
   } catch (err: unknown) {
   if (axios.isAxiosError(err)) {

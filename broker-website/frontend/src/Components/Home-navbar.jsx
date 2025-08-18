@@ -41,9 +41,18 @@ const Home_navbar = ({ searchTerm, onSearchChange, onOpenSidebar}) => {
           <div className="flex items-center space-x-4">
             <button onClick={() => navigate('/post_1')} className="bg-black hover:bg-gray-800 text-white px-5 py-2 rounded-lg font-medium transition-colors">
                 SELL
-              </button>
+            </button>
             <button className="p-2 hover:bg-gray-100 rounded-lg">
               <User className="h-6 w-6" />
+            </button>
+            <button
+              onClick={() => {
+                localStorage.clear();
+                navigate('/signin');
+              }}
+              className="bg-red-500 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+            >
+              Logout
             </button>
           </div>
         </div>

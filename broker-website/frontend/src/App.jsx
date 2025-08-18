@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Sellers_dashboard from './Pages/seller_dashboard';
+import BuyerDashboard from './Pages/BuyerDashboard';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from './Pages/Home';
 import Seller_nav from './Components/seller_nav';
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/seller_dashboard' element={<Sellers_dashboard />} />
+            <Route path='/dashboard' element={<BuyerDashboard />} />
             <Route path='/seller_nav' element={<Seller_nav />} />
             <Route path='/settings' element={<SettingsPage />} />
             <Route path='/post_2' element={<Post2 />} />

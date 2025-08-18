@@ -8,12 +8,9 @@ const prisma = new PrismaClient();
 export class AuthService {
   static async register({name, email,password,phone,role}) {
 // TODO: Implement register logic
-       const user= await prisma.user.findUnique({where:{email}});
+     const user= await prisma.user.findUnique({where:{email}});
 
-    if (user) throw new Error({
-      success:false,
-      messeage:"User already exists"
-    });
+   if (user) throw new Error("User already exists");
 
           const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);

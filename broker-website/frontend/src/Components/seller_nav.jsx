@@ -85,6 +85,16 @@ useEffect(() => {
               <button onClick={() => navigate('/post_1')} className="bg-black hover:bg-gray-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
                 SELL
               </button>
+                {/* Logout Button */}
+                <button
+                  onClick={() => {
+                    localStorage.clear();
+                    navigate('/signin');
+                  }}
+                  className="bg-red-500 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-medium transition-colors ml-4"
+                >
+                  Logout
+                </button>
             </div>
           </div>
         </div>
