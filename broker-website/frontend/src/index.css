@@ -1,1 +1,58 @@
 @import "tailwindcss";
+
+/* Dark mode base colors */
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #ffffff;
+  color: #1e293b; /* slate-800 */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark body {
+  background-color: #0f172a; /* slate-900 */
+  color: #f1f5f9; /* slate-100 */
+}
+
+/* Dark mode text colors */
+html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
+  color: #f8fafc; /* slate-50 */
+}
+
+html.dark p, html.dark span, html.dark div {
+  color: #e2e8f0; /* slate-200 */
+}
+
+/* Explicit hero overrides */
+.hero-title { color: #000000; }
+html.dark .hero-title { color: #ffffff; }
+.hero-accent { color: #2563eb; }
+html.dark .hero-accent { color: #93c5fd; }
+
+/* Dark mode card backgrounds */
+html.dark .bg-white {
+  background-color: #1e293b; /* slate-800 */
+}
+
+html.dark .bg-gray-50, html.dark .bg-slate-50 {
+  background-color: #334155; /* slate-700 */
+}
+
+html.dark .bg-gray-100, html.dark .bg-slate-100 {
+  background-color: #475569; /* slate-600 */
+}
+
+/* Dark mode borders */
+html.dark .border-gray-200, html.dark .border-slate-200 {
+  border-color: #475569; /* slate-600 */
+}
+
+html.dark .border-gray-300, html.dark .border-slate-300 {
+  border-color: #64748b; /* slate-500 */
+}
+
+/* Force hero background to respect theme */
+.hero-section { background-color: #ffffff !important; }
+html.dark .hero-section { background-color: #0b1220 !important; }

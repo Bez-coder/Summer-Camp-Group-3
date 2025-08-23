@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark mode base colors */
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #ffffff;
+  color: #1e293b;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark body {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+/* Dark mode text colors */
+html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
+  color: #f8fafc;
+}
+
+html.dark p, html.dark span, html.dark div {
+  color: #e2e8f0;
+}
+
+/* Dark mode card backgrounds */
+html.dark .bg-white {
+  background-color: #1e293b;
+}
+
+html.dark .bg-gray-50, html.dark .bg-slate-50 {
+  background-color: #334155;
+}
+
+html.dark .bg-gray-100, html.dark .bg-slate-100 {
+  background-color: #475569;
+}
+
+/* Dark mode borders */
+html.dark .border-gray-200, html.dark .border-slate-200 {
+  border-color: #475569;
+}
+
+html.dark .border-gray-300, html.dark .border-slate-300 {
+  border-color: #64748b;
+}

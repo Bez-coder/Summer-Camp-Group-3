@@ -92,13 +92,13 @@ function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+      <section className="hero-section py-20 bg-white dark:bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Connect. Trade. <span className="text-blue-600"> Succeed.</span>
+            <h1 className="hero-title text-4xl md:text-6xl font-extrabold dark:font-bold text-gray-900 mb-6">
+              Connect. Trade. <span className="hero-accent text-blue-600"> Succeed.</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-black dark:text-slate-300 mb-8 max-w-3xl mx-auto">
               The trusted marketplace where buyers and sellers meet. 
               Post your resources, find what you need, and transact with confidence 
               through our secure commission-based platform.
