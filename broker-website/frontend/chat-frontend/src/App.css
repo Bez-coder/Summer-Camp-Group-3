@@ -41,7 +41,7 @@ button {
     color: #cadcfc;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    cursor:all-scroll;
 }
 
 button:hover {
