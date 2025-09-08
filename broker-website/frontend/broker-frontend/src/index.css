@@ -10,7 +10,7 @@ html.dark {
 body {
   background-color: #ffffff;
   color: #1e293b;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.4s ease, color 0.3s ease;
 }
 
 html.dark body {
@@ -33,7 +33,7 @@ html.dark .bg-white {
 }
 
 html.dark .bg-gray-50, html.dark .bg-slate-50 {
-  background-color: #334155;
+  background-color: black;
 }
 
 html.dark .bg-gray-100, html.dark .bg-slate-100 {
