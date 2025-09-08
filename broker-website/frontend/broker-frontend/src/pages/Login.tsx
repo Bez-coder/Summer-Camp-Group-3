@@ -14,7 +14,7 @@ const Login: React.FC = () => {
     if (!res.token) setError(res.message || 'Login failed');
   };
 
-  if (user) return <div>Logged in as {user.email}</div>;
+  if (user) return <div>Logged in with this email{user.email}</div>;
 
   return (
     <form onSubmit={handleSubmit}>
