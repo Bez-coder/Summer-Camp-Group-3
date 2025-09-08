@@ -1,0 +1,108 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  BUYER
+  SELLER
+  ADMIN
+}
+
+model User {
+  id            Int            @id @default(autoincrement())
+  email         String         @unique
+  password      String
+  name          String
+  role          Role           @default(BUYER)
+  phone         String?
+  bio           String?
+  avatarUrl     String?
+  rating        Float          @default(0)
+  ratingCount   Int            @default(0)
+  listings      Listing[]
+  messages      Message[]      @relation("UserMessages")
+  buyerChats    Chat[]         @relation("BuyerChats")
+  sellerChats   Chat[]         @relation("SellerChats")
+  notifications Notification[]
+  payments      Payment[]
+  sellerRatings Rating[]       @relation("SellerRatings")
+  buyerRatings  Rating[]       @relation("BuyerRatings")
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+model Listing {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  priceBirr   Float
+  category    String
+  imageUrl    String?
+  status      String   @default("ACTIVE")
+  owner       User     @relation(fields: [ownerId], references: [id])
+  ownerId     Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  chatItems   Chat[]
+}
+
+model Chat {
+  id        Int       @id @default(autoincrement())
+  buyer     User      @relation("BuyerChats", fields: [buyerId], references: [id])
+  buyerId   Int
+  seller    User      @relation("SellerChats", fields: [sellerId], references: [id])
+  sellerId  Int
+  listing   Listing?  @relation(fields: [listingId], references: [id])
+  listingId Int?
+  messages  Message[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Message {
+  id        Int       @id @default(autoincrement())
+  chat      Chat      @relation(fields: [chatId], references: [id])
+  chatId    Int
+  sender    User      @relation("UserMessages", fields: [senderId], references: [id])
+  senderId  Int
+  content   String
+  createdAt DateTime  @default(now())
+  readAt    DateTime?
+}
+
+model Notification {
+  id        Int      @id @default(autoincrement())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  title     String
+  body      String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model Payment {
+  id        Int      @id @default(autoincrement())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  amount    Float
+  provider  String // e.g., "chapa"
+  status    String // e.g., "INITIATED", "PAID"
+  createdAt DateTime @default(now())
+}
+
+model Rating {
+  id        Int      @id @default(autoincrement())
+  seller    User     @relation("SellerRatings", fields: [sellerId], references: [id])
+  sellerId  Int
+  buyer     User     @relation("BuyerRatings", fields: [buyerId], references: [id])
+  buyerId   Int
+  value     Int
+  createdAt DateTime @default(now())
+
+  @@unique([sellerId, buyerId])
+}
