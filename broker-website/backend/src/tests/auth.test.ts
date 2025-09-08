@@ -9,14 +9,6 @@ app.post('/api/auth/register', AuthController.register);
 app.post('/api/auth/login', AuthController.login);
 app.get('/api/auth/profile', authenticate, AuthController.getProfile);
 
-describe('Auth API', () => {
-  it('should register a user', async () => {
-    const res = await request(app)
-      .post('/api/auth/register')
-      .send({ email: 'test@example.com', password: 'password' });
-    expect(res.statusCode).toBe(201);
-    expect(res.body.message).toBe('User registered successfully');
-  });
 
   it('should login a user', async () => {
     const res = await request(app)
@@ -33,3 +25,13 @@ describe('Auth API', () => {
     expect(res.body.user).toBeDefined();
   });
 });
+
+describe('Auth API', () => {
+  it('should register a user', async () => {
+    const res = await request(app)
+      .post('/api/auth/register')
+      .send({ email: 'test@example.com', password: 'password' });
+    expect(res.statusCode).toBe(201);
+    expect(res.body.message).toBe('User registered successfully');
+  });
+
