@@ -11,6 +11,7 @@ import chatRouter from './routes/chat.js';
 import notificationsRouter from './routes/notifications.js';
 import paymentRouter from './routes/payments.js';
 import uploadsRouter from './routes/uploads.js';
+import aiRouter from './routes/ai.js';
 
 dotenv.config();
 const app = express();
@@ -29,6 +30,7 @@ app.use('/api/chat', chatRouter);
 app.use('/api/notifications', notificationsRouter);
 app.use('/api/payments', paymentRouter);
 app.use('/api/uploads', uploadsRouter);
+app.use('/api/ai', aiRouter);
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`API on http://localhost:${PORT}`));
